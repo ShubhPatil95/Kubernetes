@@ -23,3 +23,9 @@ As we know pods communicates with each other using service IP addresses however 
 Dont put credentials into ConfigMap, Secrets are used to store sensitive information like username and password. It stores the data into encoded format.
 
 ![image](https://user-images.githubusercontent.com/74223025/229041019-b1739275-7549-42c1-8916-a8b7c5ec5c9c.png)
+
+## 6. Volumes
+If pod gets restarted then data associated with pod also get deleted. Hence <b>Volumes</b> attaches a physical storage to pods.
+Volumes help pods for data persistency.
+
+![image](https://user-images.githubusercontent.com/74223025/229419102-b41e265b-7b7e-416a-afb1-70e9034407e2.png)

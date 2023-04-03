@@ -42,6 +42,7 @@ Volumes help pods for data persistency.
 ![image](https://user-images.githubusercontent.com/74223025/229419102-b41e265b-7b7e-416a-afb1-70e9034407e2.png)
 
 ## 7. Deployments (StateLess apps)
+- it is replicating mechanism for StateLess apps
 - when you want to create a replica of pods, you are not really creating another pods instead you will <b>define blueprint of pods</b> and specify how many replica of that pod. The <b>blueprint</b> is called as Deployment.
 - It tells Kubernetes how to create or modify instances of the pods that hold a containerized application.
 - efficiently scale the number of replica pods,
@@ -50,9 +51,11 @@ Volumes help pods for data persistency.
 ![image](https://user-images.githubusercontent.com/74223025/229445639-4d742588-aaf0-43ad-9a0c-5ff699a9f55e.png)
 
 ## 8. Statefulset (StateFul apps/database)
-- We cant replicate DATABASE using <b>Deployments</b>, reason database has state means data. Meaning taht if we have replicas of database they all should access same shared data storage. Hence there we need some mechanism that manages which pods are currently writting data to data storage or which pods are currently reading data from data storage, <b>in order to avoid Data Incosistency</b>
+- it is replicating mechanism for StateFul apps/database
+- We cant replicate DATABASE using <b>Deployments</b>, reason database has state means data. Meaning taht if we have replicas of database they all should access same shared data storage. Hence there we need some mechanism that manages which pods are currently writting data to data storage or which pods are currently reading data from data storage, <b>in order to avoid Data Incosistency</b> (database read-write synchronization)
 - that mechanism in addition to replicating the pods is offered by Statefulset
 - StateFul apps/databases should be created using Statefulset not by Deployments.
+- deploying datavase with Statefulset is tedious work hence most of the time databases are hosted outside the Kubernetes clusters.
 
 ![image](https://user-images.githubusercontent.com/74223025/229447848-3aa31188-4a2c-41ca-ba1b-52159377846b.png)
 
